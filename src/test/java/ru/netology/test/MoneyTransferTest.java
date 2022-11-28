@@ -11,8 +11,7 @@ import static com.codeborne.selenide.Selenide.open;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static ru.netology.data.DataHelper.getFirstCardNumber;
 import static ru.netology.data.DataHelper.getSecondCardNumber;
-import static ru.netology.page.BalanceCard.transferFirstCardButton;
-import static ru.netology.page.BalanceCard.transferSecondCardButton;
+
 
 public class MoneyTransferTest {
 
@@ -32,7 +31,7 @@ public class MoneyTransferTest {
         val cardBalance = new BalanceCard();
         val firstBalanceCardStart = cardBalance.getFirstCardBalance();
         val secondBalanceCardStart = cardBalance.getFirstCardBalance();
-        val translationPage = transferSecondCardButton();
+        val translationPage = cardBalance.transferSecondCardButton();
         translationPage.transferMoney(amount, getFirstCardNumber());
         val firstCardBalanceFinish = firstBalanceCardStart - amount;
         val secondCardBalanceFinish = secondBalanceCardStart + amount;
@@ -47,7 +46,7 @@ public class MoneyTransferTest {
         val cardBalance = new BalanceCard();
         val firstBalanceCardStart = cardBalance.getFirstCardBalance();
         val secondBalanceCardStart = cardBalance.getSecondCardBalance();
-        val translationPage = transferFirstCardButton();
+        val translationPage = cardBalance.transferFirstCardButton();
         translationPage.transferMoney(amount, getSecondCardNumber());
         val firstCardBalanceFinish = firstBalanceCardStart + amount;
         val secondCardBalanceFinish = secondBalanceCardStart - amount;
@@ -63,7 +62,7 @@ public class MoneyTransferTest {
         val cardBalance = new BalanceCard();
         val firstCardBalanceStart = cardBalance.getFirstCardBalance();
         val secondCardBalanceStart = cardBalance.getSecondCardBalance();
-        val transactionPage = transferFirstCardButton();
+        val transactionPage = cardBalance.transferFirstCardButton();
         transactionPage.transferMoney(amount, getFirstCardNumber());
         transactionPage.invalidCard();
     }
@@ -74,7 +73,7 @@ public class MoneyTransferTest {
         val cardBalance = new BalanceCard();
         val firstCardBalanceStart = cardBalance.getFirstCardBalance();
         val secondCardBalanceStart = cardBalance.getSecondCardBalance();
-        val transactionPage = transferSecondCardButton();
+        val transactionPage = cardBalance.transferSecondCardButton();
         transactionPage.transferMoney(amount, getFirstCardNumber());
         transactionPage.errorLimit();
     }

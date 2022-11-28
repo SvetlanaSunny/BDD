@@ -16,7 +16,6 @@ public class PageTranslation {
         sumAmount.setValue(valueOf(amount));
         fromAccount.setValue(valueOf(from));
         clickReplenish.click();
-        new BalanceCard();
     }
 
     public void errorLimit() {

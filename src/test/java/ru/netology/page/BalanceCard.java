@@ -20,12 +20,12 @@ public class BalanceCard {
     public BalanceCard() {
     }
 
-    public  static PageTranslation transferFirstCardButton(){
+    public  PageTranslation transferFirstCardButton(){
         firstCardButton.click();
         return new PageTranslation();
     }
 
-    public  static PageTranslation transferSecondCardButton(){
+    public  PageTranslation transferSecondCardButton(){
         secondCardButton.click();
         return new PageTranslation();
     }
